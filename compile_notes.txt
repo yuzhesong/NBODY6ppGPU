@@ -1,0 +1,31 @@
+
+First you need to configure the build environment, e.g. 
+
+./configure --enable-simd=avx --with-par=b128k --enable-openmp --disable-mpi
+
+This is what I am currently using on NT: 
+
+./configure --enable-simd=sse --with-par=b128k --enable-openmp --disable-mpi
+
+(note that you will need to load the modules before this). 
+
+Compile with:
+
+ozstar/farnarkle/skylake: 
+
+module load gcc/6.4.0
+module load openmpi/3.0.3
+module load cuda/9.0.176
+
+---
+
+ngarrgu-tindebeek/tooaranna/milan: 
+
+module load gcc/11.3.0
+module load openmpi/4.1.4
+module load cuda/11.7.0
+
+---
+
+make clean
+make
